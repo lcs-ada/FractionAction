@@ -18,7 +18,7 @@ var denumerator = 0
 
 //check numerator
 while 1 == 1 {
-    print("numerator")
+    print("numerator?")
     
     // Waiting for input
     guard let integerNumerator = readLine() else {
@@ -41,7 +41,7 @@ print(numerator)
 
 //check denumerator
 while 1 == 1 {
-    print("denomator")
+    print("denomator?")
     
     //wait for the input
     guard let givenInteger = readLine() else{
