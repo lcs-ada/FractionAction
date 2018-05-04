@@ -61,15 +61,57 @@ while 1 == 1 {
     break
 }
 
-print(denomnator)
+print(denumerator)
 
 //quotient and reminder
 var quotient = numerator / denumerator
 var reminder = numerator % denumerator
 
-
-
-
+    //result = whole number
+if reminder == 0 {
+    print("Result is:", quotient)
+}
+    //if the reminder is the factor of the denomnator
+else if denumerator % reminder == 0 {
+    let reducedNumerator = 1
+    let reducedDenumerator =  denumerator / reminder
+    //if the quotient is 0, don't print
+    if quotient == 0 {
+        print("\(reducedNumerator)/\(reducedDenumerator)")
+        //if the quotient is bigger than 0, print it.
+    } else {
+        print("\(quotient) \(reducedNumerator)/\(reducedDenumerator)")
+    }
+    // the reminder is not the factor of the denomnator
+} else  {
+    // we must reduce.
+    //loop backwards from the halfway point of the numerator
+    var GCF = 1 //not the real GCF
+    for i in stride(from: reminder / 2, through: 2, by: -1){
+        print(i)
+        //when the vounter varibale "i" evenly divides into both
+        //th reminder and the original denominator...we have the GCF
+        
+        if reminder % i == 0 && denumerator % i == 0 {
+            //Now we know that "i" is the greatest common factor (GCF)
+            GCF = i
+            break
+        }
+    }
+    
+    
 // OUTPUT
-// Report results to the user here
+    let finalReminder = reminder / GCF
+    let finalDenumerator = denumerator / GCF
+    
+    //if the quotient equals to 0, don't print
+    if quotient == 0 {
+        print("\(finalReminder) /\(finalDenumerator)")
+        //if the quotient is not, print it
+    } else {
+        print("\(quotient) \(finalReminder)/\(finalDenumerator)")
+        
+    }
+}
+
 
